@@ -1,0 +1,36 @@
+{
+  "name": "node-jwt-auth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "async": "~1.5.0",
+    "bcrypt": "~0.8.5",
+    "body-parser": "~1.14.1",
+    "chai": "~3.4.1",
+    "dotenv": "^2.0.0",
+    "envs": "^0.1.6",
+    "express": "~4.13.3",
+    "express-validator": "~2.18.0",
+    "jsonwebtoken": "~5.4.1",
+    "mocha": "~2.3.4",
+    "mongoose": "~4.2.9",
+    "morgan": "~1.6.1",
+    "shortid": "^2.2.4",
+    "socket.io": "^1.4.5",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "rmdir": "^1.2.0",
+    "sinon": "^1.17.3",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0",
+    "sinon-mongoose": "^1.2.1",
+    "socket.io-stream": "^0.9.0"
+  }
+}
