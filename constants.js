@@ -8,7 +8,8 @@ var constants = {
     USER: 2,
     MODERATOR: 3,
     ADMIN: 4
-  }
+  },
+  SENDGRID_APIKEY: 'your_sendgrid_apikey'
 };
 
 module.exports = constants;
