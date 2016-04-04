@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var envs = require('envs');
 var fs = require('fs');
 var expressValidator = require('express-validator');
+var constants = require('./constants');
 
 // Load environment vars from .env file
 require('dotenv').load();
