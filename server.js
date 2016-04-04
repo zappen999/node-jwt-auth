@@ -15,6 +15,8 @@ app.set('environment', envs('NODE_ENV', 'production'));
 app.set('port', envs('PORT', 9000));
 app.set('mongo_string', envs('MONGO', 'mongodb://localhost:27017/node-jwt-auth'));
 
+var DEV = app.get('environment') === 'development';
+
 var server = require('http').Server(app);
 
 console.log('Running ' + app.get('environment') + ', port ' + app.get('port'));
@@ -57,9 +59,10 @@ app.use(expressValidator({
   }
 }));
 
+var accessControlAllowOriginString = DEV ? '*' : constants.FRONT_END_HOST;
+
 app.all('*', function(req, res, next) {
-  // @todo: Change to front end origin on production
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', accessControlAllowOriginString);
   res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
   res.header(
     'Access-Control-Allow-Headers',
@@ -67,7 +70,6 @@ app.all('*', function(req, res, next) {
   );
   next();
 });
-
 
 // Always log to file
 app.use(morgan('common', {
